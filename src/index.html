@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Calculator</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-500 p-4">
+
+    <div class="max-w-3xl mx-auto bg-green-200 rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-semibold mb-4 text-center">Income Expense Calculator</h1>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Description</label>
+            <input type="text" id="description" class="mt-1 p-2 border rounded-md w-full">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Amount</label>
+            <input type="number" id="amount" class="mt-1 p-2 border rounded-md w-full">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Type</label>
+            <div class="mt-2">
+                <label class="inline-flex items-center">
+                    <input type="radio" class="form-radio" name="type" value="income" checked>
+                    <span class="ml-2">Income</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                    <input type="radio" class="form-radio" name="type" value="expense">
+                    <span class="ml-2">Expense</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="flex justify-between mb-4">
+            <button id="addEntry" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add
+                Entry</button>
+            <button id="resetEntry"
+                class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">Reset</button>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Filter</label>
+            <div class="mt-2">
+                <label class="inline-flex items-center">
+                    <input type="radio" class="form-radio" name="filter" value="all" checked>
+                    <span class="ml-2">All</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                    <input type="radio" class="form-radio" name="filter" value="income">
+                    <span class="ml-2">Income</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                    <input type="radio" class="form-radio" name="filter" value="expense">
+                    <span class="ml-2">Expense</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h2 class="text-lg font-semibold mb-2">Summary</h2>
+            <p>Total Income: <span id="totalIncome" class="font-medium">0</span></p>
+            <p>Total Expenses: <span id="totalExpenses" class="font-medium">0</span></p>
+            <p>Net Balance: <span id="netBalance" class="font-medium">0</span></p>
+        </div>
+
+        <div>
+            <h2 class="text-lg font-semibold  mb-2">Entries</h2>
+            <table class="min-w-full border rounded-md ">
+                <thead>
+                    <tr>
+                        <th class="border bg-gray-200 p-2">Description</th>
+                        <th class="border bg-gray-200 p-2">Amount</th>
+                        <th class="border bg-gray-200 p-2">Type</th>
+                        <th class="border bg-gray-200 p-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="entryList">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+ <script src="./script.js"></script>
+</body>
+
+</html>
